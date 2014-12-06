@@ -14,6 +14,7 @@
 		AD8421DB1A339D27001EF137 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8421DA1A339D27001EF137 /* Images.xcassets */; };
 		AD8421DE1A339D27001EF137 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8421DC1A339D27001EF137 /* LaunchScreen.xib */; };
 		AD8421EA1A339D27001EF137 /* EatYourFeelingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421E91A339D27001EF137 /* EatYourFeelingsTests.swift */; };
+		AD8421F41A33AD57001EF137 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421F31A33AD57001EF137 /* RecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		AD8421E31A339D27001EF137 /* EatYourFeelingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatYourFeelingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8421E81A339D27001EF137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD8421E91A339D27001EF137 /* EatYourFeelingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatYourFeelingsTests.swift; sourceTree = "<group>"; };
+		AD8421F31A33AD57001EF137 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				AD8421D31A339D27001EF137 /* FirstViewController.swift */,
 				AD8421D51A339D27001EF137 /* SecondViewController.swift */,
 				AD8421D71A339D27001EF137 /* Main.storyboard */,
+				AD8421F31A33AD57001EF137 /* RecipeViewController.swift */,
 				AD8421DA1A339D27001EF137 /* Images.xcassets */,
 				AD8421DC1A339D27001EF137 /* LaunchScreen.xib */,
 				AD8421CF1A339D27001EF137 /* Supporting Files */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8421F41A33AD57001EF137 /* RecipeViewController.swift in Sources */,
 				AD8421D61A339D27001EF137 /* SecondViewController.swift in Sources */,
 				AD8421D21A339D27001EF137 /* AppDelegate.swift in Sources */,
 				AD8421D41A339D27001EF137 /* FirstViewController.swift in Sources */,
@@ -411,6 +415,7 @@
 				AD8421EF1A339D27001EF137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD8421F01A339D27001EF137 /* Build configuration list for PBXNativeTarget "EatYourFeelingsTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				AD8421F21A339D27001EF137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
