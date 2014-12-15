@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0363391A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD0363371A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodeld */; };
+		AD03633B1A3CA37700AA3EFE /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03633A1A3CA37700AA3EFE /* Recipe.swift */; };
+		AD03633D1A3CA38600AA3EFE /* CookBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03633C1A3CA38600AA3EFE /* CookBook.swift */; };
+		AD451F371A3E60AB009F5D92 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD451F361A3E60AB009F5D92 /* UIImageView+AFNetworking.m */; };
+		AD451F391A3E630F009F5D92 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD451F381A3E630F009F5D92 /* WebViewController.swift */; };
 		AD8421D21A339D27001EF137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421D11A339D27001EF137 /* AppDelegate.swift */; };
 		AD8421D41A339D27001EF137 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421D31A339D27001EF137 /* FirstViewController.swift */; };
 		AD8421D61A339D27001EF137 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421D51A339D27001EF137 /* SecondViewController.swift */; };
@@ -15,6 +20,9 @@
 		AD8421DE1A339D27001EF137 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8421DC1A339D27001EF137 /* LaunchScreen.xib */; };
 		AD8421EA1A339D27001EF137 /* EatYourFeelingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421E91A339D27001EF137 /* EatYourFeelingsTests.swift */; };
 		AD8421F41A33AD57001EF137 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421F31A33AD57001EF137 /* RecipeViewController.swift */; };
+		AD8421F61A33CFA9001EF137 /* CookBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421F51A33CFA9001EF137 /* CookBooksViewController.swift */; };
+		AD8421F81A33D03F001EF137 /* CookBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421F71A33D03F001EF137 /* CookBookViewController.swift */; };
+		AD8421FA1A33D083001EF137 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421F91A33D083001EF137 /* RecipeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD0363381A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EatYourFeelings.xcdatamodel; sourceTree = "<group>"; };
+		AD03633A1A3CA37700AA3EFE /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		AD03633C1A3CA38600AA3EFE /* CookBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookBook.swift; sourceTree = "<group>"; };
+		AD451F351A3E60AB009F5D92 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "../../../../Downloads/AFNetworking-master/UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		AD451F361A3E60AB009F5D92 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "../../../../Downloads/AFNetworking-master/UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		AD451F381A3E630F009F5D92 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AD8421CC1A339D27001EF137 /* EatYourFeelings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatYourFeelings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8421D01A339D27001EF137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD8421D11A339D27001EF137 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +54,9 @@
 		AD8421E81A339D27001EF137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD8421E91A339D27001EF137 /* EatYourFeelingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatYourFeelingsTests.swift; sourceTree = "<group>"; };
 		AD8421F31A33AD57001EF137 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		AD8421F51A33CFA9001EF137 /* CookBooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookBooksViewController.swift; sourceTree = "<group>"; };
+		AD8421F71A33D03F001EF137 /* CookBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookBookViewController.swift; sourceTree = "<group>"; };
+		AD8421F91A33D083001EF137 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +99,19 @@
 			isa = PBXGroup;
 			children = (
 				AD8421D11A339D27001EF137 /* AppDelegate.swift */,
+				AD0363371A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodeld */,
+				AD03633A1A3CA37700AA3EFE /* Recipe.swift */,
+				AD03633C1A3CA38600AA3EFE /* CookBook.swift */,
 				AD8421D31A339D27001EF137 /* FirstViewController.swift */,
+				AD8421F31A33AD57001EF137 /* RecipeViewController.swift */,
 				AD8421D51A339D27001EF137 /* SecondViewController.swift */,
 				AD8421D71A339D27001EF137 /* Main.storyboard */,
-				AD8421F31A33AD57001EF137 /* RecipeViewController.swift */,
+				AD451F381A3E630F009F5D92 /* WebViewController.swift */,
+				AD8421F91A33D083001EF137 /* RecipeCell.swift */,
+				AD8421F71A33D03F001EF137 /* CookBookViewController.swift */,
+				AD8421F51A33CFA9001EF137 /* CookBooksViewController.swift */,
+				AD451F351A3E60AB009F5D92 /* UIImageView+AFNetworking.h */,
+				AD451F361A3E60AB009F5D92 /* UIImageView+AFNetworking.m */,
 				AD8421DA1A339D27001EF137 /* Images.xcassets */,
 				AD8421DC1A339D27001EF137 /* LaunchScreen.xib */,
 				AD8421CF1A339D27001EF137 /* Supporting Files */,
@@ -219,8 +245,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8421F41A33AD57001EF137 /* RecipeViewController.swift in Sources */,
+				AD8421F81A33D03F001EF137 /* CookBookViewController.swift in Sources */,
+				AD0363391A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodeld in Sources */,
 				AD8421D61A339D27001EF137 /* SecondViewController.swift in Sources */,
+				AD8421FA1A33D083001EF137 /* RecipeCell.swift in Sources */,
+				AD8421F61A33CFA9001EF137 /* CookBooksViewController.swift in Sources */,
+				AD03633B1A3CA37700AA3EFE /* Recipe.swift in Sources */,
+				AD451F391A3E630F009F5D92 /* WebViewController.swift in Sources */,
 				AD8421D21A339D27001EF137 /* AppDelegate.swift in Sources */,
+				AD03633D1A3CA38600AA3EFE /* CookBook.swift in Sources */,
+				AD451F371A3E60AB009F5D92 /* UIImageView+AFNetworking.m in Sources */,
 				AD8421D41A339D27001EF137 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +461,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AD0363371A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AD0363381A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodel */,
+			);
+			currentVersion = AD0363381A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodel */;
+			path = EatYourFeelings.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AD8421C41A339D27001EF137 /* Project object */;
 }

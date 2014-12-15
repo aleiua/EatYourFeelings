@@ -11,6 +11,7 @@ import UIKit
 class FirstViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate {
 
     let moods = ["Happy", "Sad", "Angry", "Adventurous", "Afraid", "Disgusted", "Stressed"]
+    var currentMood: String!
     
     @IBOutlet weak var moodPickerView: UIPickerView!
     
@@ -44,12 +45,13 @@ class FirstViewController: UIViewController, UIPickerViewDataSource,UIPickerView
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currentMood = moods[row]
     }
     
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
 
         //color  and center the label's background
-        
+        //based on tutorial: http://codewithchris.com/uipickerview-example/
         var pickerLabel = view as UILabel!
         if view == nil {  //if no label there yet
             pickerLabel = UILabel()
@@ -67,11 +69,24 @@ class FirstViewController: UIViewController, UIPickerViewDataSource,UIPickerView
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+        if segue.identifier == "GetRecipeSegue" {
+        
+            let destinationViewController = segue.destinationViewController as RecipeViewController
+            //let destinationViewController = (segue.destinationViewController as UINavigationController).topViewController as RecipeViewController
+            
+            if (currentMood == nil) {
+                currentMood = "Happy"
+            }
+            
+            destinationViewController.currentMood = currentMood
+            print (destinationViewController.currentMood)
+            destinationViewController.navigationItem.leftItemsSupplementBackButton = true
         
     }
 
  
-
+    }
 
 }
 
