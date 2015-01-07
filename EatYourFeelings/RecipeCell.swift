@@ -10,7 +10,7 @@ import UIKit
 
 class RecipeCell: UITableViewCell {
     @IBOutlet weak var recipeImageView: UIImageView!
-    @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var recipeTitleTextLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +22,6 @@ class RecipeCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 
 }

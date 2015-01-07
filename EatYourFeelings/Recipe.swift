@@ -12,6 +12,12 @@ import CoreData
 class Recipe: NSManagedObject {
     
     @NSManaged var title: String
+    @NSManaged var imageURL: String
+    @NSManaged var recipeURL: String
+    @NSManaged var time: String
+    @NSManaged var servings: String
+    @NSManaged var ingredients: [String]
+    
     @NSManaged var cookbook: CookBook
     
     

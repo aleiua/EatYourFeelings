@@ -5,11 +5,15 @@
         <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="cookbook" inverseEntity="Recipe" syncable="YES"/>
     </entity>
     <entity name="Recipe" syncable="YES">
+        <attribute name="ingredients" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipeURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="servings" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cookbook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CookBook" inverseName="recipe" inverseEntity="CookBook" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Recipe" positionX="754" positionY="702" width="128" height="73"/>
         <element name="CookBook" positionX="756" positionY="432" width="128" height="73"/>
+        <element name="Recipe" positionX="979" positionY="701" width="128" height="133"/>
     </elements>
 </model>

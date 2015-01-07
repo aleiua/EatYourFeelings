@@ -10,7 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate {
 
-    let moods = ["Happy", "Sad", "Angry", "Adventurous", "Afraid", "Disgusted", "Stressed"]
+    let moods = ["Happy", "Sad", "Angry", "Adventurous", "Hungry", "Romantic", "Stressed"]
     var currentMood: String!
     
     @IBOutlet weak var moodPickerView: UIPickerView!

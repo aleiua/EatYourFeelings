@@ -10,7 +10,6 @@
 		AD0363391A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD0363371A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodeld */; };
 		AD03633B1A3CA37700AA3EFE /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03633A1A3CA37700AA3EFE /* Recipe.swift */; };
 		AD03633D1A3CA38600AA3EFE /* CookBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03633C1A3CA38600AA3EFE /* CookBook.swift */; };
-		AD451F371A3E60AB009F5D92 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD451F361A3E60AB009F5D92 /* UIImageView+AFNetworking.m */; };
 		AD451F391A3E630F009F5D92 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD451F381A3E630F009F5D92 /* WebViewController.swift */; };
 		AD8421D21A339D27001EF137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421D11A339D27001EF137 /* AppDelegate.swift */; };
 		AD8421D41A339D27001EF137 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8421D31A339D27001EF137 /* FirstViewController.swift */; };
@@ -39,8 +38,6 @@
 		AD0363381A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EatYourFeelings.xcdatamodel; sourceTree = "<group>"; };
 		AD03633A1A3CA37700AA3EFE /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		AD03633C1A3CA38600AA3EFE /* CookBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookBook.swift; sourceTree = "<group>"; };
-		AD451F351A3E60AB009F5D92 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "../../../../Downloads/AFNetworking-master/UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		AD451F361A3E60AB009F5D92 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "../../../../Downloads/AFNetworking-master/UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		AD451F381A3E630F009F5D92 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AD8421CC1A339D27001EF137 /* EatYourFeelings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatYourFeelings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8421D01A339D27001EF137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +95,7 @@
 		AD8421CE1A339D27001EF137 /* EatYourFeelings */ = {
 			isa = PBXGroup;
 			children = (
+				AD8421D71A339D27001EF137 /* Main.storyboard */,
 				AD8421D11A339D27001EF137 /* AppDelegate.swift */,
 				AD0363371A3CA12A00AA3EFE /* EatYourFeelings.xcdatamodeld */,
 				AD03633A1A3CA37700AA3EFE /* Recipe.swift */,
@@ -105,13 +103,10 @@
 				AD8421D31A339D27001EF137 /* FirstViewController.swift */,
 				AD8421F31A33AD57001EF137 /* RecipeViewController.swift */,
 				AD8421D51A339D27001EF137 /* SecondViewController.swift */,
-				AD8421D71A339D27001EF137 /* Main.storyboard */,
 				AD451F381A3E630F009F5D92 /* WebViewController.swift */,
 				AD8421F91A33D083001EF137 /* RecipeCell.swift */,
-				AD8421F71A33D03F001EF137 /* CookBookViewController.swift */,
 				AD8421F51A33CFA9001EF137 /* CookBooksViewController.swift */,
-				AD451F351A3E60AB009F5D92 /* UIImageView+AFNetworking.h */,
-				AD451F361A3E60AB009F5D92 /* UIImageView+AFNetworking.m */,
+				AD8421F71A33D03F001EF137 /* CookBookViewController.swift */,
 				AD8421DA1A339D27001EF137 /* Images.xcassets */,
 				AD8421DC1A339D27001EF137 /* LaunchScreen.xib */,
 				AD8421CF1A339D27001EF137 /* Supporting Files */,
@@ -254,7 +249,6 @@
 				AD451F391A3E630F009F5D92 /* WebViewController.swift in Sources */,
 				AD8421D21A339D27001EF137 /* AppDelegate.swift in Sources */,
 				AD03633D1A3CA38600AA3EFE /* CookBook.swift in Sources */,
-				AD451F371A3E60AB009F5D92 /* UIImageView+AFNetworking.m in Sources */,
 				AD8421D41A339D27001EF137 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +377,7 @@
 				INFOPLIST_FILE = EatYourFeelings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -393,6 +388,7 @@
 				INFOPLIST_FILE = EatYourFeelings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

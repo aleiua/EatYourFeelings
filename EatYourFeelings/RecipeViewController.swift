@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RecipeViewController: UITableViewController {
     
@@ -17,6 +18,7 @@ class RecipeViewController: UITableViewController {
     var recipeDetails: NSDictionary!
     var ingredients: [String]!
     var recipeUrl: NSURL!
+    var imageUrl: String!
 
     @IBOutlet weak var recipeTitle: UILabel!
     @IBOutlet weak var ingredientsTextView: UITextView!
@@ -24,6 +26,8 @@ class RecipeViewController: UITableViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var servingsLabel: UILabel!
     @IBOutlet weak var recipeImageView: UIImageView!
+//    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +40,8 @@ class RecipeViewController: UITableViewController {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
+        let saveButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "saveRecipeButtonTap:")
+        self.navigationItem.rightBarButtonItem = saveButton
         
         if currentMood != nil {
             findRecipe()
@@ -107,25 +113,43 @@ class RecipeViewController: UITableViewController {
         
         if self.recipeDetails != nil {
             if let imageDict = self.recipeDetails["images"] as? [NSDictionary] {
-            let imageURL = imageDict[0]["hostedLargeUrl"] as NSURL
+                imageUrl = imageDict[0]["hostedLargeUrl"] as String
+                let image = UIImage(data: NSData(contentsOfURL: NSURL(string:imageUrl)!)!)
+                self.recipeImageView.image = image
+                
+            }
             
             
             ingredients = recipeDetails["ingredientLines"] as [String]
-            self.ingredientsTextView.text = ingredients[0]
+            var ingredString: String = ""
+
+            for ingredient in ingredients {
+                
+                ingredString = ingredString + ingredient + "\n"
+            }
+            
+            self.ingredientsTextView.text = ingredString
             
             let title = recipeDetails["name"] as String
             self.recipeTitle.text = title
             
-            let time = recipeDetails["totalTime"] as String
-            self.timeLabel.text = time
+            if let time = recipeDetails["totalTime"] as? String {
+                self.timeLabel.text = time
+            } else {
+                self.timeLabel.text = "Unknown"
+            }
             
-            let servings = recipeDetails["yield"] as String
-            self.servingsLabel.text = servings
-            
+            if let servings = recipeDetails["yield"] as? String {
+                self.servingsLabel.text = servings
+            } else {
+                self.servingsLabel.text = "Unknown"
+            }
+                
             let sourceDict = recipeDetails["source"] as NSDictionary
             let recipeUrlString = sourceDict["sourceRecipeUrl"] as String
             recipeUrl = NSURL(string: recipeUrlString)
-            }
+            
+            
         }
     }
     
@@ -147,16 +171,16 @@ class RecipeViewController: UITableViewController {
             
             let url = NSURL(string: "http://api.yummly.com/v1/api/recipe/" + escapedID! + "?_app_id=0e24db70&_app_key=205297c4cf249101b322de02c993ceba")
             
-            print(url)
+            println(url)
 
             let dataTask = secondUrlSession.dataTaskWithURL(url!, completionHandler: {data, response, error in
                 
                 let responseStr = NSString(data: data, encoding: NSUTF8StringEncoding)
 
-                print(responseStr)
+                println(responseStr)
                 
                 if let recipeDeets = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary {
-                    print("got dem recipe deets")
+                    println("got dem recipe deets")
                     self.recipeDetails = recipeDeets as NSDictionary
                 }
                 
@@ -195,7 +219,7 @@ class RecipeViewController: UITableViewController {
             
             let responseString = NSString(data: data, encoding: NSUTF8StringEncoding)
             
-            //print(responseString)
+            print(responseString)
             
             if let recipeData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary {
                 print("in da if")
@@ -211,13 +235,75 @@ class RecipeViewController: UITableViewController {
         })
         dataTask.resume()
         
-
-
     }
+    
+    
+    func saveRecipeButtonTap(sender: UIBarButtonItem) {
+        
+        
+        let whichCookbookAlert = UIAlertController(title: "Which cookbook?", message: "Enter the name of the already existing cookbook you'd like to save this recipe to.", preferredStyle: .Alert)
+        
+        whichCookbookAlert.addTextFieldWithConfigurationHandler { textField in
+            textField.placeholder = "Exact cookbook name"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        whichCookbookAlert.addAction(cancelAction)
+        
+        let createAction = UIAlertAction(title: "Save", style: .Default) { action in
+            
+            let textField = whichCookbookAlert.textFields!.first! as UITextField
+            self.createRecipeWithContent(textField.text)
+            
+            self.tableView.reloadData()
+        }
+        
+        whichCookbookAlert.addAction(createAction)
+        
+        presentViewController(whichCookbookAlert, animated: true, completion: nil)
+        
+    }
+    
+    
 
+    func createRecipeWithContent(cookbookName: String) {
     
+        let managedObjectContext = AppDelegate.sharedAppDelegate.managedObjectContext!
+        
+        let entity = NSEntityDescription.entityForName("Recipe", inManagedObjectContext: managedObjectContext)
+        
+        let recipe = Recipe(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+        
+        let stringUrl = String(contentsOfURL: recipeUrl)
+        
+        let fetchRequest = NSFetchRequest(entityName: "CookBook")
+        println(cookbookName)
+        
+        fetchRequest.predicate = NSPredicate(format: "title = %@", cookbookName)
+        let fetchResult = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as [CookBook]
+        
+        let cookbook = fetchResult
+        
+        recipe.cookbook = fetchResult[0] as CookBook
+        
+        recipe.title = title! as String
+        recipe.servings = self.servingsLabel.text! as String
+        recipe.imageURL = self.imageUrl as String
+        recipe.recipeURL = stringUrl!
+        recipe.time = self.timeLabel.text! as String
+        recipe.ingredients = self.ingredients as [String]
+
+        
+        
+        AppDelegate.sharedAppDelegate.saveContext()
+        
+        
+    }
+    
+
+
 /*
-    
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
@@ -281,5 +367,7 @@ class RecipeViewController: UITableViewController {
         
         }
     }
+    
+    
 }
 
